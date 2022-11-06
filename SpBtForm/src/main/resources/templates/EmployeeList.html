@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+
+<style type="text/css">
+  
+
+</style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<!-- Bootstrap cdn -->
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+
+
+</head>
+<body style="background-color: #FBD72B;">
+<h4 style="margin: 5px 0 0 20px; color: #1a1a00">Employees List 
+<span style="margin-left: 41%;"><a href="/"><button class="btn btn-secondary btn-sm" >Employee Form</button></a></span>
+</h4> 
+<div class="form" style="margin: 1% 0 0 1% ; width: 60%; background-color: #F6F0EA;border-radius: 5px;">
+
+ 
+<table class="table table-striped table-bordered">
+											<thead>
+												<tr>
+													<th>First Name</th>
+													<th>Last Name</th>
+													<th>Gender</th>
+													<th>Email</th>
+													<th>DOB</th>
+													<th>Actions</th>													 
+												</tr>
+											</thead>
+											<tbody>
+												<tr th:each="EmployeeList:${EmployeeList}"> 													 
+													<td th:text="${EmployeeList.firstname}"></td>
+													<td th:text="${EmployeeList.lastname}"></td>
+													<td th:text="${EmployeeList.gender}"></td>
+													<td th:text="${EmployeeList.email}"></td>
+													<td th:text="${EmployeeList.dob}"></td> 
+													<td><a  th:href="@{/EmployeeEdit/{id} (id=${EmployeeList.eid})}">  
+													<i class="fas fa-edit"></i>   
+													</a> 
+													&nbsp; &nbsp;  &nbsp; 
+													<a class="show_confirm" style="color: red;"
+														th:href="@{/DeleteEmployee/{id} (id=${EmployeeList.eid})}">
+													<i class="fa-solid fa-trash-can"></i>
+													</a></td>
+												</tr>
+											</tbody>
+										</table>
+</div>
+ 
+
+</body>
+</html>
+
+ 

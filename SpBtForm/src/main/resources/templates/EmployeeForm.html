@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+
+<style type="text/css">
+  
+
+</style>
+
+<!-- Bootstrap cdn -->
+<!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+
+
+</head>
+<body style="background-color: #FBD72B;">
+<h4 style="margin: 5px 0 0 20px; color: #1a1a00">Employee Details 
+<span style="margin-left: 10%;"><a href="/EmployeeList"><button class="btn btn-secondary btn-sm" >Employee List</button></a></span>
+</h4> 
+
+<div class="form" style="margin: 1% 0 0 1% ; width: 30%; background-color: #F6F0EA;border-radius: 5px;">
+
+ 
+<form autocomplete="off" th:action="@{/SaveEmployee}" method="POST" th:Object="${Employee}" style="margin-left: 1%;padding: 3%;" >
+   
+   <input type="hidden" name="eid" th:value="${Employee.eid}">
+ 
+   <div class="form-row" >
+    <div class="form-group col-md-12" >
+      <label for="firstName">First Name</label>
+      <input th:field="*{firstname}" type="text" class="form-control" id="firstName" placeholder="First Name">
+    </div> 
+  </div>  
+  <div class="form-row">
+    <div class="form-group col-md-12">
+      <label for="lastName">Last Name</label>
+      <input  th:field="*{lastname}" type="text" class="form-control" id="lastName" placeholder="Last Name">
+    </div>      
+  </div>
+  <div class="form-row">&nbsp;
+      <label>Gender</label>
+      <div class="form-group col-md-12">
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" th:field="*{gender}"  th:value="Male" >
+          <label class="form-check-label"  for="gridRadios1">
+            Male
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" th:field="*{gender}" th:value="Female">
+          <label class="form-check-label"  for="gridRadios2">
+            Female
+          </label>
+        </div>
+         
+      </div>
+   </div>
+  <div class="form-row">
+    <div class="form-group col-md-12">
+      <label for="Email">Email</label>
+      <input  th:field="*{email}" type="email" class="form-control" id="Email" placeholder="Email">
+    </div>      
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-12">
+      <label for="DOB">Date of birth</label>
+      <input  th:field="*{dob}" type="date" class="form-control" id="DOB" placeholder="Date of birth">
+    </div>      
+  </div>
+  <div style="margin-left: 6%;">
+   
+  <button type="reset" class="btn btn-secondary btn-sm">Clear</button>
+  <button type="submit" class="btn btn-primary btn-sm" style="margin-left: 1%;">Save</button>
+   
+  </div>
+</form>
+</div>
+ 
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <form th:action="@{/SaveEmployee}" method="POST" th:Object="${Employee}" > -->
+<!-- <p th:text="${message}"></p> -->
+<!-- <label>First Name: </label> -->
+<!-- <input th:field="*{firstname}" type="text"> <br> -->
+
+<!-- <label>Last Name</label> -->
+<!-- <input th:field="*{lastname}" type="text"> <br> -->
+
+<!-- <label>Gender</label>  -->
+<!-- <select th:field="*{gender}"> -->
+<!-- <option th:value="''">Select</option> -->
+<!-- <option th:value="Male">Male</option> -->
+<!-- <option th:value="Female">Female</option> -->
+<!-- </select> -->
+ 
+
+<!-- <label>Email</label> -->
+<!-- <input th:field="*{email}" type="email"> <br> -->
+
+<!-- <label>DOB</label> -->
+<!-- <input th:field="*{dob}" type="date"> <br> -->
+
+
+
+<!-- <button type="reset"> -->
+<!-- Clear -->
+<!-- </button> -->
+<!-- <button type="submit"> -->
+<!-- Submit -->
+<!-- </button> -->
+
+ 
+<!-- </form> -->
+
+<!-- </body> -->
+<!-- </html> -->
